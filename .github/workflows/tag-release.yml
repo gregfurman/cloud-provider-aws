@@ -43,6 +43,8 @@ jobs:
 
     - name: Upload Go Binary as Release Artifact
       uses: actions/upload-artifact@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         name: ecr-credential-provider
         path: ecr-credential-provider

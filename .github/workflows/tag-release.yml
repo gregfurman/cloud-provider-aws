@@ -43,8 +43,7 @@ jobs:
       run: |
         GOOS=linux GOARCH=amd64 go build -o ecr-credential-provider cmd/ecr-credential-provider/*.go
 
-    - name: Upload Go Binary as Release Artifact
-      uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -67,3 +66,12 @@ jobs:
           See [CHANGELOG](https://github.com/kubernetes/cloud-provider-aws/blob/master/docs/CHANGELOG.md) for full list of changes.
         draft: false
         prerelease: false
+    
+    - uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./ecr-credential-provider
+        asset_name: ecr-credential-provider
+        asset_content_type: application/octet-stream

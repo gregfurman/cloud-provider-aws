@@ -12,7 +12,7 @@
 </p>
 <p align="center">
     <a href="https://github.com/kubernetes/cloud-provider-aws/issues">
-        <img alt="GitHub issues" src="https://img.shields.io/github/issues/kubernetes/cloud-provider-aws">
+        <img alt="GitHub isues" src="https://img.shields.io/github/issues/kubernetes/cloud-provider-aws">
     </a>
     <a href="https://github.com/kubernetes/cloud-provider-aws/network">
         <img alt="GitHub forks" src="https://img.shields.io/github/forks/kubernetes/cloud-provider-aws">
